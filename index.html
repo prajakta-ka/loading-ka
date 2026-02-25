@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>His 22nd Story</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Caveat:wght@500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Poppins,system-ui;background:radial-gradient(circle at top,#1b1b2b,#050507);color:white;overflow:hidden}
+
+/* Intro Screen */
+.intro{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#050507;z-index:10;flex-direction:column;text-align:center}
+.intro h1{font-weight:600;letter-spacing:2px}
+.intro p{opacity:.6}
+.startBtn{margin-top:20px;padding:12px 20px;border-radius:30px;background:white;color:black;border:none;cursor:pointer}
+
+.wrapper{height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+.card{width:380px;height:560px;perspective:1600px}
+.inner{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform 1.5s}
+.open .inner{transform:rotateY(180deg)}
+.side{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:22px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.7)}
+.front{background:linear-gradient(160deg,#111,#000)}
+.cover{position:absolute;inset:0;background:radial-gradient(circle at 70% 20%,rgba(255,255,255,.15),transparent 40%)}
+.frontContent{position:relative;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px}
+.title{font-size:34px;margin-bottom:10px}
+.subtitle{opacity:.7}
+.tap{margin-top:30px;font-size:12px;opacity:.6}
+.back{background:#0e0e14;transform:rotateY(180deg);overflow-y:auto}
+.section{padding:24px;border-bottom:1px solid rgba(255,255,255,.06);animation:fade .9s ease both}
+.section h2{margin:0 0 6px;font-size:20px}
+.section p{font-size:14px;opacity:.85;line-height:1.6}
+.polaroid{background:white;padding:8px;border-radius:6px;margin-top:12px;transform:rotate(-2deg)}
+.polaroid img{width:100%;display:block;border-radius:4px;transition:transform .6s ease, box-shadow .6s ease}
+.polaroid img:hover{transform:scale(1.05);box-shadow:0 10px 30px rgba(255,255,255,.25)}
+.badges span{display:inline-block;background:#1c1c28;padding:6px 10px;margin:4px;border-radius:8px;font-size:12px}
+.links a{display:block;background:#1a1a25;padding:10px;margin-top:8px;border-radius:10px;color:white;text-decoration:none;font-size:13px;transition:.25s}
+.links a:hover{transform:translateX(4px)}
+.message{font-family:Caveat;font-size:26px;line-height:1.4;text-align:center;padding:30px;transition:all 1s ease}
+.finalReveal{animation:glow 2s ease forwards}
+@keyframes glow{0%{text-shadow:0 0 0 rgba(255,255,255,0)}50%{text-shadow:0 0 25px rgba(255,255,255,.8)}100%{text-shadow:0 0 10px rgba(255,255,255,.4)}}
+.openBtn{position:absolute;inset:0}
+@keyframes fade{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.stars{position:fixed;inset:0;background-image:radial-gradient(white 1px,transparent 1px);background-size:40px 40px;opacity:.15;pointer-events:none;animation:twinkle 6s linear infinite}
+@keyframes twinkle{0%{opacity:.1}50%{opacity:.25}100%{opacity:.1}}
+.music{position:fixed;bottom:15px;right:15px;background:#1b1b27;padding:10px 14px;border-radius:20px;font-size:12px;cursor:pointer}
+</style>
+</head>
+<body>
+
+<div class="intro" id="intro">
+<h1>Loading Mr. KA</h1>
+<p>Preparing something special...</p>
+<button class="startBtn" onclick="startExperience()">Start</button>
+</div>
+
+<div class="stars"></div>
+<div class="wrapper">
+<div class="card" id="card">
+<div class="inner">
+<div class="side front">
+<div class="cover"></div>
+<div class="frontContent">
+<div class="title">Happy 22nd Kushal ❤️</div>
+<div class="subtitle">A small story about you</div>
+<div class="tap">tap to open</div>
+</div>
+<div class="openBtn" onclick="openCard()"></div>
+</div>
+<div class="side back">
+
+<div class="section">
+<h2>The Person</h2>
+<p>Kind. Loving. Hardworking. Responsible. The kind of person who protects the people he loves and quietly works for his dreams.</p>
+<div class="polaroid"><img src="photo1.jpg"></div>
+</div>
+
+<div class="section">
+<h2>The Creator</h2>
+<p>Through his lens he captures celebrations, emotions and stories that people remember forever.</p>
+<div class="badges">
+<span>Storyteller</span>
+<span>Creative</span>
+<span>Visuals</span>
+</div>
+<div class="links">
+<a href="https://www.instagram.com/kushalarya_" target="_blank">Behind the Lens</a>
+<a href="https://drive.google.com/drive/folders/1incaqdQag0_wogveyBkQOIJtCTiN_VYx" target="_blank">Your Creations</a>
+<a href="https://www.instagram.com/shaadikarlecinemas" target="_blank">𝐒𝐡𝐚𝐚𝐝𝐢 𝐊𝐚𝐫𝐥𝐞! 𝐂𝐢𝐧𝐞𝐦𝐚𝐬</a>
+<a href="https://www.instagram.com/shankhayatra" target="_blank">Shankhayatra</a>
+</div>
+</div>
+
+<div class="section">
+<h2>The Rider</h2>
+<p>New bike. Night rides. Open roads. A reminder that life is meant to be lived freely.</p>
+<div class="polaroid"><img src="bike.jpg"></div>
+</div>
+
+<div class="section">
+<h2>The Future</h2>
+<p>Dreaming of a home. Building a life. Step by step creating a future for the people who matter most.</p>
+</div>
+
+<div class="message" id="finalMessage" style="opacity:0;transform:translateY(20px);">
+Happy Birthday.
+Keep riding, keep creating,
+and keep becoming the man you're meant to be.
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="music" onclick="toggleMusic()">Play / Pause Music 🎵</div>
+
+<audio id="song" loop preload="metadata" controls style="position:fixed;bottom:60px;right:15px;width:220px">
+<source src="https://cdn.pixabay.com/download/audio/2022/08/04/audio_2dde668d05.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function startExperience(){
+ document.getElementById('intro').style.display='none';
+}
+
+function openCard(){
+ const card=document.getElementById('card');
+ card.classList.toggle('open');
+ const s=document.getElementById('song');
+ s.volume=0;
+ s.play().then(()=>{
+   let v=0;
+   const fade=setInterval(()=>{
+     v+=0.05;
+     if(v>=1){v=1;clearInterval(fade);} 
+     s.volume=v;
+   },120);
+ }).catch(()=>{});
+ confettiBurst();
+ setTimeout(()=>{
+   const m=document.getElementById('finalMessage');
+   if(m){
+     m.style.opacity=1;
+     m.style.transform='translateY(0)';
+     m.classList.add('finalReveal');
+     setTimeout(confettiBurst,300);
+   }
+ },1200);
+}
+
+function toggleMusic(){
+ let s=document.getElementById('song');
+ if(s.paused){s.play()}else{s.pause()}
+}
+
+function confettiBurst(){
+ const duration=1500;
+ const end=Date.now()+duration;
+ (function frame(){
+  const colors=['#ff4d6d','#ffd166','#06d6a0','#4cc9f0','#ffffff'];
+  const confetti=document.createElement('div');
+  confetti.style.position='fixed';
+  confetti.style.width='8px';
+  confetti.style.height='8px';
+  confetti.style.background=colors[Math.floor(Math.random()*colors.length)];
+  confetti.style.left=Math.random()*100+'vw';
+  confetti.style.top='-10px';
+  document.body.appendChild(confetti);
+  let fall=setInterval(()=>{
+    let top=confetti.offsetTop;
+    confetti.style.top=top+14+'px';
+    if(top>window.innerHeight){confetti.remove();clearInterval(fall);} 
+  },16);
+  if(Date.now()<end) requestAnimationFrame(frame);
+ })();
+}
+</script>
+</body>
+</html>
